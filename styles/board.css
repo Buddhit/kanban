@@ -91,11 +91,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.as-sortable-item, .as-sortable-placeholder {
-    min-height: 20px;
-    margin: 5px;
-    border-radius: 5px;
-}
+
 
 .applicant-card {
     display: flex;

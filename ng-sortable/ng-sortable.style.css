@@ -4,8 +4,8 @@
 
 .as-sortable-item, .as-sortable-placeholder {
     min-height: 20px;
-    margin: 1px 2px 5px 1px;
-    border-radius: 10px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 .as-sortable-item {
@@ -13,8 +13,7 @@
     background-color: #ffffff;
 }
 
-.as-sortable-item-handle {
-}
+
 
 .as-sortable-placeholder {
     border: 1px dashed darkgrey;
@@ -26,5 +25,3 @@
     opacity: .8;
 }
 
-.as-sortable-hidden {
-}
