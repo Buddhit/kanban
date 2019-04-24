@@ -1,0 +1,106 @@
+#board { margin: 0; padding: 0 10px 0 10px;}
+
+.board-header >ul>li> a {
+    border-radius: 4px !important;
+    background-color: lightgrey;
+    border-color: darkgrey;
+}
+
+.board-header >ul>li> .active{
+    background-color: darkgrey;
+    border-color: #000;
+}
+
+.board-header >ul>li> a:hover {
+    border-color: #000;
+}
+
+
+#board {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#board  {
+    padding: 5px 5px 0 5px;
+}
+
+#board  {
+    padding: 10px 0 10px 5px;
+}
+
+.columnHeader,
+#board  {
+    background: #fafafa linear-gradient(to bottom, #ffffff, #f2f2f2) repeat-x;
+    padding: 5px 0 5px 13px;
+    font-size: 20px;
+    font-weight: normal;
+    border-bottom: 1px solid #dddddd;
+}
+
+
+
+#columns { 
+    margin: 20px 0 5px 0;
+    display: flex;
+}
+#columns > div { 
+    padding-left: 3px; 
+    padding-right:3px;
+    width: 350px;
+}
+
+.column {
+    border: solid 1px lightgray;
+}
+.card-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    min-height: 50px;
+    height: 90vh;
+    overflow-y: auto;
+    margin-left: 5px;
+}
+
+.noMargin { margin-bottom: 0;}
+
+.default {
+    box-shadow: inset rgba(0, 0, 0, 0.0980392) 0 1px 10px 0;
+}
+.default-color { background-color: #ffffff; }
+
+.card {
+   padding: 0 10px 10px 5px;
+   border-radius: 3px;
+   margin: 8px;
+   margin-top: 5px;
+}
+
+.card-title {
+    color: #7c9eb2;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: 2px 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.as-sortable-item, .as-sortable-placeholder {
+    min-height: 20px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.applicant-card {
+    display: flex;
+}
+
+.applicant-card::after{
+    content: attr(data-after-content)
+}

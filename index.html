@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular Sortable and Draggable Demo.</title>
+    <!--styles -->
+    <link rel="stylesheet" type="text/css" href="ng-sortable/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="ng-sortable/ng-sortable.min.css">
+    <link rel="stylesheet" type="text/css" href="ng-sortable/ng-sortable.style.css">
+    <link rel="stylesheet" type="text/css" href="styles/board.css">  
+   
+
+</head>
+<body ng-app="app">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div data-ng-model="kanbanBoard" id="board" ng-controller="KanbanController">
+                <button ng-click="bulkMove('Assigned')">move</button>
+            <div id="columns">
+                <div class="col-item" ng-repeat="column in kanbanBoard.columns"
+                     data-columnindex="{{$index}}" id="column{{$index}}">
+                    <div class="column">
+                        <div class="columnHeader">
+                            <input type="checkbox" ng-model="column.isSelected" ng-change="selectAllApplicant(column)">
+                            <span>{{column.name}}  <span class="badge badge-secondary badge-circle">{{column.applicants.length}}</span></span>
+                        </div>
+                        <ul class="cards card-list" as-sortable="kanbanSortOptions" data-ng-model="column.applicants">
+                            <li class="card" ng-repeat="applicant in column.applicants" as-sortable-item>
+                                <input type="checkbox" ng-model="applicant.isSelected" ng-change="applicantSelected(column)">
+                                <!-- Item template -->
+                                <div as-sortable-item-handle>
+                                    <div class="applicant-card">
+                                        <ng-letter-avatar avatarborder="true" charCount="2" data="{{applicant.name}}" shape="round"
+                                            avatarcustomborder="border:3px solid #f27007"></ng-letter-avatar>
+                                        <span class="card-title">{{applicant.name}}</span>
+                                    </div>                                   
+                                </div>    
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+ <!--scripts-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.min.js"></script>    
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.1/ui-bootstrap.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.1/ui-bootstrap-tpls.js"></script>
+ <script type="text/javascript" src="ng-sortable/ng-sortable.min.js"></script>
+ <script type="text/javascript" src="ngletteravatar.min.js"></script>
+ <script type="text/javascript" src="app.js"></script>
+ <script type="text/javascript" src="KanbanController.js"></script>
+</body>
+</html>
